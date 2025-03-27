@@ -7,7 +7,11 @@
   "author": "FBGFi",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test src/**/*.test.js",
+    "test:watch": "node --test --watch",
+    "lint": "eslint src",
+    "compile": "tsc",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -16,7 +20,19 @@
   "engines": {
     "node": ">=23.9.0"
   },
+  "exports": {
+    ".": {
+      "default": "./lib/eslint.config.js"
+    },
+    "./rules": {
+      "default": "./lib/src/rules/index.js"
+    }
+  },
   "devDependencies": {
-    "@fbgfi/eslint-config": "git+https://github.com/FBGFi/eslint-config"
+    "@fbgfi/eslint-config": "git+https://github.com/FBGFi/eslint-config",
+    "eslint": "^9.23.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
   }
 }
