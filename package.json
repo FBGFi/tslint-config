@@ -1,0 +1,22 @@
+{
+  "name": "@fbgfi/tslint-config",
+  "version": "1.0.0",
+  "description": "Common TSLint configurations used in node projects",
+  "main": "src/index.ts",
+  "type": "module",
+  "author": "FBGFi",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FBGFi/tslint-config"
+  },
+  "engines": {
+    "node": ">=23.9.0"
+  },
+  "devDependencies": {
+    "@fbgfi/eslint-config": "git+https://github.com/FBGFi/eslint-config"
+  }
+}
