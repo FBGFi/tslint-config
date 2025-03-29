@@ -5,7 +5,7 @@ import { extendedPlugins } from "./lib/index.js";
 export default tseslint.config(tseslint.configs.recommended,
   {
     ...recommended,
-    plugins: extendedPlugins
+    plugins: extendedPlugins,
   },
   {
     files: ["**/*.{ts,tsx}"],

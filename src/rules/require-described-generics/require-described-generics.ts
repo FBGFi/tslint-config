@@ -1,8 +1,8 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
 
-const createRule = ESLintUtils.RuleCreator((name) => `@fbgfi/${name}`);
-
-export const requireDescribedGenerics = createRule({
+export const requireDescribedGenerics = ESLintUtils.RuleCreator(
+  (name) => `@fbgfi/${name}`,
+)({
   name: "require-described-generics",
   meta: {
     docs: {
@@ -19,10 +19,24 @@ export const requireDescribedGenerics = createRule({
     schema: [],
   },
   defaultOptions: [],
-  create() {
+  create(context) {
     return {
-      Program() {
-        // console.log(context, node);
+      TSTypeParameter(node) {
+        const parent = node.parent;
+        if (parent.type === "TSTypeParameterDeclaration") {
+          const name = node.name.name;
+          if (parent.params.length > 1 && name.length === 1) {
+            context.report({
+              messageId: "oneLetterGeneric",
+              node,
+            });
+          } else if (name[name.length - 1].match(/[a-z]/)) {
+            context.report({
+              messageId: "missingUpperCaseEnd",
+              node,
+            });
+          }
+        }
       },
     };
   },

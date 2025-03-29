@@ -7,10 +7,8 @@
   "author": "FBGFi",
   "license": "ISC",
   "scripts": {
-    "test": "node --test src/**/*.test.js",
-    "test:watch": "node --test --watch",
     "lint": "eslint src",
-    "compile": "tsc",
+    "compile": "tsc -p ./tsconfig.build.json",
     "prepare": "husky"
   },
   "repository": {
@@ -30,6 +28,7 @@
   },
   "devDependencies": {
     "@fbgfi/eslint-config": "git+https://github.com/FBGFi/eslint-config",
+    "@types/node": "^22.13.14",
     "eslint": "^9.23.0",
     "husky": "^9.1.7",
     "typescript": "^5.8.2",
