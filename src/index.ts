@@ -1,3 +1,3 @@
-import { requireDescribedGenerics } from "./rules/index.js";
+import { requireDescribedGenerics, noCamelTypes } from "./rules/index.js";
 
-export { requireDescribedGenerics };
+export { requireDescribedGenerics, noCamelTypes };

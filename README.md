@@ -3,3 +3,6 @@ This package is for defining rules in TS projects with performance in mind. Exte
 
 ## require-described-generics
 Requires generics to be more precisely described to avoid mixup with regular types.
+
+## no-camel-types
+Requires type and interface declarations to start with upper case letters.

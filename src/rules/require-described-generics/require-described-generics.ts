@@ -30,7 +30,7 @@ export const requireDescribedGenerics = ESLintUtils.RuleCreator(
               messageId: "oneLetterGeneric",
               node,
             });
-          } else if (name[name.length - 1].match(/[a-z]/)) {
+          } else if (name.match(/[a-z]$/)) {
             context.report({
               messageId: "missingUpperCaseEnd",
               node,

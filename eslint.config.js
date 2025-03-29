@@ -12,6 +12,7 @@ export default tseslint.config(tseslint.configs.recommended,
     name: "@fbgfi/tslint-config",
     rules: {
       "@fbgfi/require-described-generics": "warn",
+      "@fbgfi/no-camel-types": "error",
     },
   },
   testFileRules
